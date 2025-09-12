@@ -1,8 +1,6 @@
 # Impact of Global Events on Oil & Gas Prices in Europe (2020–2023)
 
-**Individual data analysis** (part of a larger academic project).  
-This repository explores how **COVID-19** and the **Russia–Ukraine war** shaped European oil & gas price dynamics using public series (EIA, OPEC) and macro indicators (World Bank).  
-_No classmates are mentioned anywhere in this repo._
+**Individual data analysis** (part of a larger academic project). This repository explores how **COVID-19** and the **Russia–Ukraine war** shaped European oil & gas price dynamics using public series (EIA, OPEC) and macro indicators (World Bank). _No classmates are mentioned anywhere in this repo._
 
 ---
 
