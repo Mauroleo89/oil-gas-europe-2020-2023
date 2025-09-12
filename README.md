@@ -118,92 +118,19 @@ Privacy: All data is public.
    # macOS/Linux:
    source .venv/bin/activate
 
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
 
-▶️ How to Run Locally
+## 🗺️ Roadmap
 
-Create and activate a virtual environment:
+- Add processed CSVs with data dictionary.
+- Publish figure gallery with key results directly in README.
+- Extend forecasting with ARIMA/VAR models.
+-  Add automated preprocessing and unit tests.
 
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
+## 📝 Notes for Reviewers
 
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-(Optional) Convert .xls → .csv:
-
-python src/preprocess.py --in data/raw --out data/processed
-
-
-Open the notebook:
-
-jupyter notebook notebooks/Final_Project.ipynb
-
-🔁 Reproducibility
-
-Random seeds fixed where applicable.
-
-Package versions pinned in requirements.txt.
-
-Large raw files excluded in .gitignore.
-
-🗺️ Roadmap
-
- Add processed CSVs with data dictionary.
-
- Publish figure gallery with key results directly in README.
-
- Extend forecasting with ARIMA/VAR models.
-
- Add automated preprocessing and unit tests.
-
-📝 Notes for Reviewers
-
-Start with notebooks/Final_Project.ipynb for exploratory analysis.
-
-Charts referenced in the analysis are saved in reports/figures/.
-
-This repo is focused on my individual contribution.
-
-📃 License
-
-MIT.
-
-Extras
-
-.gitignore (Python + Jupyter):
-
-.venv/
-venv/
-__pycache__/
-*.py[cod]
-.ipynb_checkpoints/
-data/raw/
-models/
-.DS_Store
-*.swp
-
-
-requirements.txt:
-
-pandas
-numpy
-matplotlib
-seaborn
-jupyter
-
-
----
-
-✅ This README now clearly shows:  
-- **Process** (how you worked).  
-- **Principal findings** (clear bullet points).  
-- **Impact** (links to inflation & GDP).  
-- **Professional structure** (aligned and Markdown-correct).  
-
-Would you like me to also **draft a "Figure Gallery" section** (with Markdown placeholders for your charts once you upload them into `reports/figures/`)? That would make your README visually stronger.
-
+- Start with notebooks/Final_Project.ipynb for the exploratory analysis.
+- Figures summarizing results are stored in reports/figures/.
+- This repo focuses exclusively on my individual analysis contribution.
