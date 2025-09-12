@@ -30,8 +30,6 @@ oil-gas-europe-2020-2023/
 ├─ requirements.txt
 ├─ LICENSE
 └─ README.md
-
-
 ---
 
 ## 🧠 Problem & Context
