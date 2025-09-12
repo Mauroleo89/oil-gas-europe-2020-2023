@@ -7,10 +7,10 @@ No classmates are mentioned anywhere in this repo.
 ---
 
 ## 🚀 Highlights
-- Goal: Analyze how global shocks affected oil & gas price dynamics in Europe.
-- Stack: Python, Jupyter, Excel.
-- Core methods: Data cleaning, time-series visualization, simple AR models.
-- Key result: Strong correlations between global events and price volatility.
+- Goal: Understand the relationship between major global shocks and energy price volatility in Europe.
+- Stack: Python, Jupyter, Excel (raw .xls), visualization libraries.
+- Core methods: Data cleaning, time-series exploration, moving averages, event overlays, baseline comparisons.
+- Key result: Clear evidence of price collapses in 2020 and unprecedented spikes in 2022; strong links between commodity markets and inflation.
 
 ---
 
@@ -33,39 +33,57 @@ oil-gas-europe-2020-2023/
 ---
 
 ## 🧠 Problem & Context
-Energy prices in Europe whipsawed between 2020 and 2023.  
-This project analyzes how two shocks—COVID-19 (2020) and the Russia–Ukraine war (2022)—propagated into oil (WTI/Brent), gas (Henry Hub), and macro indicators (inflation, GDP).
+Between 2020 and 2023, European energy markets faced historic disruptions:
+- The COVID-19 pandemic caused oil demand to collapse, driving negative WTI futures and OPEC oversupply.
+- The Russia–Ukraine conflict triggered supply insecurity, sanctions, and unprecedented spikes in oil and natural gas.
+- European economies experienced inflationary pressures, supply chain disruptions, and volatile GDP growth.
 
-Scope note: This is my individual contribution focused on data analysis. It distills, cleans, and visualizes public data; it does not include team content or classmates’ names.
+This project applies a data-driven approach to quantify these shocks and link them to macroeconomic variables.  
+Scope note: This is my individual contribution, focused on data analysis and visualization.
 
 ---
 
 ## 🗂️ Data
-- Sources (raw):
-  - EIA weekly spot prices (PET_PRI_SPT_S1_W.xls)
-  - OPEC reference prices (OPEC_prices.xls)
-  - Henry Hub & production (psw01.xls)
-  - World Bank macro indicators
-- Fields (typical): Date, WTI, Brent, OPEC basket, natural gas (USD/MMBtu), GDP growth, CPI.
+- Sources:
+  - **EIA:** Weekly WTI & Brent spot prices (`PET_PRI_SPT_S1_W.xls`)
+  - **OPEC:** Reference basket (`OPEC_prices.xls`)
+  - **EIA/Henry Hub:** U.S. natural gas (`psw01.xls`)
+  - **World Bank:** GDP growth, CPI, inflation
+- Fields: Dates, benchmarks (WTI, Brent, OPEC), natural gas prices, GDP (%), inflation (%).
+- Format: Kept as `.xls` to demonstrate workflows familiar to analysts who often rely on Excel pivot tables, although `.csv` is also supported.
 - Privacy: All data is public.
-
-Note: I decided to keep the raw .xls format in this repo to demonstrate workflows familiar to many energy analysts (who often use pivot tables in Excel). Good practice would be to convert to .csv, but here I show both approaches.
 
 ---
 
 ## 🔧 Approach
-- Cleaning: harmonize dates, rename columns, handle missing weeks.
-- Exploration: rolling means, YoY deltas, correlation heatmaps.
-- Events overlay: COVID onset, 2021 US freeze, 2022 invasion, 2022 sell-offs, 2023 mild winter.
-- Baselines: naive persistence vs simple AR models.
-- Outputs: publication-ready charts in reports/figures.
+1. Data cleaning:
+   - Normalize date formats, rename columns, handle missing weeks.
+   - Create derived fields (returns, rolling averages).
+2. Exploration:
+   - Trend plots, YoY changes, z-scored anomalies.
+   - Correlation heatmaps between energy and macro variables.
+3. Event overlay:
+   - Annotate COVID onset (Mar 2020), U.S. freeze (Feb 2021), Russia–Ukraine invasion (Feb 2022), summer 2022 sell-offs, and mild 2023 winter.
+4. Baselines:
+   - Persistence vs simple autoregressive (AR) models.
+   - Comparisons against macro indicators.
 
 ---
 
-## 📈 Results
-- Observed: strong price spikes around early 2022; elevated volatility.
-- Interpretation: shocks transmit to CPI/GDP with a lag.
-- Limitations: correlation ≠ causation; macro series differ in frequency/revisions.
+## 📈 Results & Insights
+- **Oil prices (WTI, Brent, OPEC):**
+  - April 2020 collapse during COVID lockdowns; WTI briefly negative.
+  - Gradual recovery through 2021.
+  - Sharp surge in early 2022 following geopolitical conflict.
+- **Natural gas (Henry Hub):**
+  - Volatility linked to seasonal storage and weather.
+  - 2022 spike intensified by Europe’s supply insecurity.
+- **Macro linkages:**
+  - CPI inflation increased with energy costs, especially mid-2022.
+  - GDP growth slowed in tandem with energy price shocks.
+- **Key insight:** Europe’s energy dependence made it highly vulnerable to global disruptions, with gas markets reacting more violently than oil.
+
+Charts illustrating these findings are saved in `reports/figures/`.
 
 ---
 
@@ -88,23 +106,24 @@ Note: I decided to keep the raw .xls format in this repo to demonstrate workflow
 ---
 
 ## 🔁 Reproducibility
-- Fixed seeds for any random steps.
-- Pinned versions in requirements.txt.
-- Large files kept out of Git (see .gitignore).
+- Random seeds fixed for consistency.
+- Pinned package versions in requirements.txt.
+- Large files excluded via .gitignore.
 
 ---
 
 ## 🗺️ Roadmap
-- [ ] Add processed CSVs with a data dictionary
-- [ ] Publish figure gallery in README
-- [ ] Optional: add ARIMA baseline for WTI/Brent
-- [ ] Add unit tests for loaders
+- [ ] Add processed CSVs and a data dictionary
+- [ ] Expand figure gallery with inflation overlays
+- [ ] Test ARIMA/VAR models for predictive analysis
+- [ ] Package preprocessing code for re-use
 
 ---
 
 ## 📝 Notes for Reviewers
-Start with notebooks/Final_Project.ipynb for EDA.  
-The academic background is summarized here as an individual contribution.
+Start with notebooks/Final_Project.ipynb.  
+This notebook contains exploratory data analysis (EDA) and narrative context.  
+The repo focuses only on my individual contribution.
 
 ---
 
@@ -141,3 +160,4 @@ numpy
 matplotlib
 seaborn
 jupyter
+
