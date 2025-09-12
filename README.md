@@ -7,28 +7,30 @@ No classmates are mentioned anywhere in this repo.
 ---
 
 ## 🚀 Highlights
-- Goal: Understand the relationship between major global shocks and energy price volatility in Europe.
-- Stack: Python, Jupyter, Excel (raw .xls), visualization libraries.
-- Core methods: Data cleaning, time-series exploration, moving averages, event overlays, baseline comparisons.
-- Key result: Clear evidence of price collapses in 2020 and unprecedented spikes in 2022; strong links between commodity markets and inflation.
+- Goal: Understand the relationship between global shocks and energy price volatility in Europe.
+- Stack: Python, Jupyter, Excel.
+- Core methods: Data cleaning, time-series visualization, event overlays, baseline comparisons.
+- Key result: Evidence of price collapses in 2020 and unprecedented spikes in 2022; strong linkages with European inflation.
 
 ---
 
 ## 📦 Project Structure
+```text
 oil-gas-europe-2020-2023/
 ├─ data/
-│  ├─ raw/                 # original sources (.xls)
-│  └─ processed/           # cleaned CSVs (optional)
+│   ├─ raw/                # original Excel sources (.xls)
+│   └─ processed/          # cleaned CSVs (optional)
 ├─ notebooks/
-│  └─ Final_Project.ipynb
+│   └─ Final_Project.ipynb
 ├─ src/
-│  ├─ preprocess.py
-│  └─ utils.py
+│   ├─ preprocess.py
+│   └─ utils.py
 ├─ reports/
-│  └─ figures/             # charts saved here
+│   └─ figures/            # charts and outputs
 ├─ requirements.txt
 ├─ LICENSE
 └─ README.md
+
 
 ---
 
