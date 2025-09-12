@@ -1,153 +1,128 @@
 # Impact of Global Events on Oil & Gas Prices in Europe (2020–2023)
 
-**Individual data analysis** (part of a larger academic project). This repository explores how COVID‑19 and the Russia–Ukraine war shaped European oil & gas price dynamics using public series (EIA, OPEC) and macro indicators (World Bank). No classmates are mentioned anywhere in this repo.
+**Individual data analysis** (part of a larger academic project).  
+This repository explores how **COVID-19** and the **Russia–Ukraine war** shaped European oil & gas price dynamics using public series (EIA, OPEC) and macro indicators (World Bank).  
+_No classmates are mentioned anywhere in this repo._
 
 ---
 
 ## 🚀 Highlights
-
-* **Goal:** \<What problem are you solving?>
-* **Stack:** \<Python / Jupyter / SQL / etc.>
-* **Core methods:** \<e.g., feature engineering, linear regression, random forest>
-* **Key result:** \<RMSE / accuracy / business impact / visualization>
+- **Goal:** Analyze how global shocks affected oil & gas price dynamics in Europe.  
+- **Stack:** Python, Jupyter, Excel.  
+- **Core methods:** Data cleaning, time-series visualization, simple AR models.  
+- **Key result:** Strong correlations between global events and price volatility.
 
 ---
 
 ## 📦 Project Structure
-
-````text
+```text
 oil-gas-europe-2020-2023/
 ├─ data/
-│  ├─ raw/                 # original sources (.xls kept out of Git LFS if large)
-│  └─ processed/           # cleaned CSVs
+│  ├─ raw/                 # original sources (.xls)
+│  └─ processed/           # cleaned CSVs (optional)
 ├─ notebooks/
-│  ├─ 01_explore.ipynb
-│  └─ 02_modeling.ipynb
+│  └─ Final_Project.ipynb
 ├─ src/
 │  ├─ preprocess.py
 │  └─ utils.py
 ├─ reports/
-│  └─ figures/             # charts saved here and embedded in README
+│  └─ figures/             # charts saved here
 ├─ requirements.txt
 ├─ LICENSE
-├─ README.md
-└─ .gitignore
-```text
-project-name/
-├─ data/                # sample or synthetic data only (no private data)
-├─ notebooks/           # exploratory & training notebooks
-├─ src/                 # reusable Python code
-├─ reports/             # figures and final outputs
-├─ requirements.txt     # dependencies
-├─ README.md            # this file
-└─ .gitignore           # ignore venv, data/raw, checkpoints
-````
+└─ README.md
+🧠 Problem & Context
+Energy prices in Europe whipsawed between 2020 and 2023.
+This project analyzes how two shocks—COVID-19 (2020) and the Russia–Ukraine war (2022)—propagated into oil (WTI/Brent), gas (Henry Hub), and macro indicators (inflation, GDP).
 
-> If your current files are different, we’ll map them into this structure.
+Scope note: This is my individual contribution focused on data analysis. It distills, cleans, and visualizes public data; it does not include team content or classmates’ names.
 
----
+🗂️ Data
+Sources (raw):
 
-## 🧠 Problem & Context
+EIA weekly spot prices (PET_PRI_SPT_S1_W.xls)
 
-Energy prices in Europe whipsawed between 2020 and 2023. This project analyzes how two shocks—**COVID‑19 (2020)** and the **Russia–Ukraine war (2022)**—propagated into oil (WTI/Brent), gas (Henry Hub) and macro indicators (inflation, GDP) using time‑series exploration and simple baselines.
+OPEC reference prices (OPEC_prices.xls)
 
-**Scope note:** This is my **individual contribution** focused on data analysis. It distills, cleans, and visualizes public data; it does **not** include team content or classmates’ names.
+Henry Hub & production (psw01.xls)
 
----
+World Bank macro indicators
 
-## 🗂️ Data
+Fields (typical): Date, WTI, Brent, OPEC basket, natural gas (USD/MMBtu), GDP growth, CPI.
 
-* **Sources (raw)**: EIA weekly spot prices (`PET_PRI_SPT_S1_W.xls`), OPEC price series (`OPEC_prices.xls`), Henry Hub & production (`psw01.xls`), macro indicators (World Bank). Raw .xls files are stored under `data/raw/` and converted to CSV in `data/processed/` for reproducibility.
-* **Fields (typical)**: Date, commodity benchmark (WTI, Brent, OPEC), price (USD/bbl), natural gas price (USD/MMBtu), GDP growth (%, annual), CPI/inflation (%, YoY).
-* **Privacy**: All data is public. No personal or institutional confidential data.
+Privacy: All data is public.
 
-> Tip: Convert legacy `.xls` to `.csv` before analysis for easier GitHub preview and diffs.
+ℹ️ I decided to keep the raw .xls format in this repo to demonstrate workflows familiar to many energy analysts (who often use pivot tables in Excel). Good practice would be to convert to .csv, but here I show both approaches.
 
----
+🔧 Approach
+Cleaning: harmonize dates, rename columns, handle missing weeks.
 
-## 🔧 Approach
+Exploration: rolling means, YoY deltas, correlation heatmaps.
 
-* **Cleaning**: harmonize dates, rename columns, handle missing weeks, convert `.xls` → `.csv`.
-* **Exploration**: rolling means, YoY deltas, z‑scored anomalies; correlation heatmaps (macro vs energy).
-* **Events overlay**: annotate 2020‑03 (COVID onset), 2021‑02 (US freeze), 2022‑02‑24 (RU–UA invasion), 2022‑06/09 (sell‑offs), 2023 mild winter.
-* **Baselines**: naive persistence vs simple AR models (optional) to contextualize volatility.
-* **Outputs**: publication‑ready charts in `reports/figures/`.
+Events overlay: COVID onset, 2021 US freeze, 2022 invasion, 2022 sell-offs, 2023 mild winter.
 
----
+Baselines: naive persistence vs simple AR models.
 
-## 📈 Results
+Outputs: publication-ready charts in reports/figures/.
 
-* **Observed**: strong price spikes around early 2022 and elevated volatility; macro linkages visible in correlations. See `reports/figures/`.
-* **Interpretation**: shocks transmit to CPI/GDP with a lag; Europe mirrors global crude benchmarks while gas shows weather‑ and storage‑driven swings.
-* **Limitations**: correlations are not causation; macro series differ in frequency and revisions.
+📈 Results
+Observed: strong price spikes around early 2022; elevated volatility.
 
----
+Interpretation: shocks transmit to CPI/GDP with a lag.
 
-## ▶️ How to Run Locally
+Limitations: correlation ≠ causation; macro series differ in frequency/revisions.
 
-1. Create and activate a virtual environment
+▶️ How to Run Locally
+Create and activate a virtual environment:
 
-```bash
+bash
+Copy code
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux:
 source .venv/bin/activate
-```
+Install dependencies:
 
-2. Install dependencies
-
-```bash
+bash
+Copy code
 pip install -r requirements.txt
-```
+(Optional) Convert legacy .xls → .csv:
 
-3. Prepare data (convert legacy .xls → .csv)
-
-```bash
+bash
+Copy code
 python src/preprocess.py --in data/raw --out data/processed
-```
+Open the notebook:
 
-4. Open the notebooks
+bash
+Copy code
+jupyter notebook notebooks/Final_Project.ipynb
+🔁 Reproducibility
+Fixed seeds for any random steps.
 
-```bash
-jupyter notebook notebooks/01_explore.ipynb
-```
+Pinned versions in requirements.txt.
 
----
+Large files kept out of Git (see .gitignore).
 
-## 🔁 Reproducibility
+🗺️ Roadmap
+ Add processed CSVs with a data dictionary
 
-* Fixed seeds for any random steps.
-* Pinned versions in `requirements.txt`.
-* Large artifacts kept out of Git (see `.gitignore`).
+ Publish figure gallery in README
 
----
+ Optional: add ARIMA baseline for WTI/Brent
 
-## 🗺️ Roadmap
+ Add unit tests for loaders
 
-* [ ] Add processed CSVs with a data dictionary
-* [ ] Publish figure gallery in README
-* [ ] Optional: simple ARIMA baseline for WTI/Brent
-* [ ] Add unit tests for loaders
+📝 Notes for Reviewers
+Start with notebooks/Final_Project.ipynb for EDA.
+The academic background is summarized here as an individual contribution.
 
----
-
-## 📝 Notes for Reviewers
-
-Start with `notebooks/01_explore.ipynb` for EDA. The academic background of the analysis and key narratives are summarized here (individual contribution), without referencing classmates. A related write‑up exists but is not included to keep this repo focused on code and data.
-
----
-
-## 📃 License
-
+📃 License
 MIT.
 
----
+Extras
+.gitignore (Python + Jupyter):
 
-### Extras
-
-**.gitignore (Python + Jupyter):**
-
-```gitignore
+gitignore
+Copy code
 # Environments
 .venv/
 venv/
@@ -166,17 +141,19 @@ models/
 # OS / editors
 .DS_Store
 *.swp
-```
+requirements.txt (initial, adjust as needed):
 
-**requirements.txt (initial, adjust as needed):**
-
-```text
+text
+Copy code
 pandas
 numpy
 matplotlib
 seaborn
 jupyter
-```
+yaml
+Copy code
 
-> Current notebook imports detected: pandas, numpy, matplotlib, seaborn. Add others if you use them (e.g., statsmodels, scipy).
+---
 
+👉 This way, it’s **one block** to copy-paste into your README.md.  
+Do you want me to also prepare a **shorter “executive summary” version** (1–2 paragraphs) for LinkedIn o
