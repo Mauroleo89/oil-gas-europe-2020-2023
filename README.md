@@ -45,83 +45,79 @@ Between 2020 and 2023, energy markets faced two once-in-a-generation disruptions
 - **These shocks created ripple** effects on inflation, industrial production, and GDP.
 - This project quantifies these linkages and visualizes the dynamics over time.
 
-## 🗂️ Data
+---
 
-EIA: Weekly WTI & Brent spot prices (PET_PRI_SPT_S1_W.xls)
+## 📊 Data
+- **EIA:** Weekly WTI & Brent spot prices (`PET_PRI_SPT_S1_W.xls`)  
+- **OPEC:** Reference basket prices (`OPEC_prices.xls`)  
+- **Henry Hub:** Natural gas benchmark (`psw01.xls`)  
+- **World Bank:** Macro indicators (GDP growth, CPI, inflation)  
 
-OPEC: Reference basket prices (OPEC_prices.xls)
-
-Henry Hub: Natural gas benchmark (psw01.xls)
-
-World Bank: Macro indicators (GDP growth, CPI, inflation)
-
-Format: .xls files were retained to demonstrate workflows familiar to many energy analysts (Excel + pivot tables). CSV conversion is also provided for reproducibility.
+Format: `.xls` files were retained to demonstrate workflows familiar to many energy analysts (Excel + pivot tables). CSV conversion is also provided for reproducibility.  
 Privacy: All data is public.
 
-🔧 Process & Methodology
+---
 
-Data Cleaning
+## 🔧 Process & Methodology
+1. **Data Cleaning**  
+   - Standardized date formats and renamed columns.  
+   - Handled missing weeks and irregular intervals.  
+   - Mapped multiple Excel sheets into unified time-series datasets.  
 
-Standardized date formats, renamed columns.
+2. **Exploration**  
+   - Trend visualizations with rolling averages.  
+   - Year-over-year percentage changes and anomaly detection.  
+   - Comparison across benchmarks (WTI, Brent, OPEC basket).  
 
-Handled missing weeks and irregular intervals.
+3. **Event Overlay**  
+   - Annotated key dates:  
+     - COVID onset (Mar 2020)  
+     - Texas freeze (Feb 2021)  
+     - Russia–Ukraine invasion (Feb 2022)  
+     - 2022 summer sell-offs  
+     - Mild winter in early 2023  
 
-Mapped multiple sheets into unified time-series.
+4. **Macro Linkages**  
+   - Correlation heatmaps between energy benchmarks and CPI/GDP.  
+   - Lag analysis to observe delayed transmission from energy prices to inflation.  
 
-Exploration
+5. **Baselines & Forecasting**  
+   - Naive persistence models (last week = next week).  
+   - Simple AR models for volatility context.  
 
-Trend visualizations with rolling means.
+6. **Outputs**  
+   - Publication-ready charts in `reports/figures`.  
+   - A notebook narrative summarizing process, analysis, and interpretation.  
 
-YoY percentage change and anomaly detection.
+---
 
-Comparison across benchmarks (WTI, Brent, OPEC basket).
+## 📈 Principal Findings
+- **Oil (WTI, Brent, OPEC):**  
+  - 2020 saw historic lows, including WTI futures turning negative.  
+  - Recovery through 2021 with economic reopening.  
+  - 2022 geopolitical shocks sent benchmarks to multi-year highs.  
 
-Event Overlay
+- **Natural Gas (Henry Hub):**  
+  - Higher volatility than oil, driven by seasonal storage and weather.  
+  - 2022 spike amplified by Europe’s reliance on Russian supply.  
 
-Annotated key dates: COVID onset (Mar 2020), Texas freeze (Feb 2021), invasion of Ukraine (Feb 2022), 2022 sell-offs, and mild 2023 winter.
+- **Macro Indicators:**  
+  - CPI inflation spiked in parallel with energy costs, peaking mid-2022.  
+  - GDP growth slowed as energy crises created industrial and consumer strain.  
 
-Macro Linkages
+- **Key Insight:**  
+  Oil shocks were **global**, while gas shocks were **region-specific** and more severe in Europe, highlighting the continent’s vulnerability to supply disruptions.  
 
-Correlation heatmaps between energy benchmarks and CPI/GDP.
+---
 
-Lag analysis to observe delayed transmission from energy to inflation.
+## ▶️ How to Run Locally
+1. Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   # Windows: .venv\Scripts\activate
+   # macOS/Linux:
+   source .venv/bin/activate
 
-Baselines & Forecasting
-
-Persistence (last week = next week).
-
-Simple AR models as baselines for volatility.
-
-Outputs
-
-Publication-ready charts exported to reports/figures.
-
-Notebook narrative summarizing context, analysis, and interpretation.
-
-📈 Principal Findings
-
-Oil (WTI, Brent, OPEC):
-
-2020 saw historic lows, including WTI futures turning negative.
-
-Recovery in 2021 as economies reopened.
-
-2022 geopolitical shocks sent benchmarks to multi-year highs.
-
-Natural Gas (Henry Hub):
-
-Far sharper volatility than oil.
-
-2022 spike amplified by Europe’s dependence on Russian supply and weather conditions.
-
-Macro Indicators:
-
-Inflation (CPI) spiked in tandem with energy costs.
-
-GDP slowed as energy crises created industrial and consumer pressure.
-
-Key Insight:
-Oil price shocks were global, while gas price shocks were region-specific and more severe in Europe, underscoring the continent’s vulnerability to supply disruptions.
 
 ▶️ How to Run Locally
 
