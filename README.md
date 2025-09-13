@@ -1,9 +1,7 @@
 # Impact of Global Events on Oil & Gas Prices in Europe (2020–2023)
 
 📊 **Individual Data Analysis Project**  
-This repository examines how **COVID-19** (2020) and the **Russia–Ukraine war** (2022) disrupted European energy markets. Using oil benchmarks (WTI, Brent, OPEC), natural gas (Henry Hub), and macro indicators (inflation, GDP), it highlights how global shocks translated into price volatility and economic pressure.
-
-No classmates are mentioned anywhere in this repo. This is my **individual contribution**.
+This repository examines how **COVID-19** (2020) and the **Russia–Ukraine war** (2022) disrupted European energy markets. Using oil benchmarks (WTI, Brent, OPEC), natural gas (Henry Hub), and macro indicators (inflation, GDP), it highlights how global shocks translated into price volatility and economic pressure. No classmates are mentioned anywhere in this repo. This is my **individual contribution**.
 
 ---
 
@@ -95,7 +93,11 @@ Privacy: All data is public.
 - **Oil (WTI, Brent, OPEC):**  
   - 2020 saw historic lows, including WTI futures turning negative.  
   - Recovery through 2021 with economic reopening.  
-  - 2022 geopolitical shocks sent benchmarks to multi-year highs.  
+  - 2022 geopolitical shocks sent benchmarks to multi-year highs.
+
+<img width="847" height="725" alt="Crude_price" src="https://github.com/user-attachments/assets/43e22c70-5f76-412a-bbdc-1ab9949ea437" />
+
+<img width="1001" height="624" alt="Produ_oil" src="https://github.com/user-attachments/assets/a6817a67-743f-4a06-8457-d4866000c5bf" />
 
 - **Natural Gas (Henry Hub):**  
   - Higher volatility than oil, driven by seasonal storage and weather.  
@@ -103,10 +105,13 @@ Privacy: All data is public.
 
 - **Macro Indicators:**  
   - CPI inflation spiked in parallel with energy costs, peaking mid-2022.  
-  - GDP growth slowed as energy crises created industrial and consumer strain.  
-
+  - GDP growth slowed as energy crises created industrial and consumer strain.
+ 
 - **Key Insight:**  
-  Oil shocks were **global**, while gas shocks were **region-specific** and more severe in Europe, highlighting the continent’s vulnerability to supply disruptions.  
+  Oil shocks were **global**, while gas shocks were **region-specific** and more severe in Europe, highlighting the continent’s vulnerability to supply disruptions.
+
+  
+<img width="806" height="689" alt="Corr_matrix" src="https://github.com/user-attachments/assets/b8c4b8ae-b18b-48fa-afb0-7b6e8ddfcc74" />
 
 ---
 
